@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Use — Daily Snapshots</title>
+  <meta name="robots" content="noindex"/>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #1a1a2e;
+    --muted:   #5a5a7a;
+    --accent:  #2563eb;
+    --accent2: #7c3aed;
+    --bg:      #fafaf8;
+    --surface: #ffffff;
+    --border:  #e8e8f0;
+    --warn-bg: #fff7ed;
+    --warn-border: #f97316;
+    --warn-text: #9a3412;
+    --note-bg: #eff6ff;
+    --note-border: #2563eb;
+    --note-text: #1e40af;
+    --radius: 10px;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+  }
+  .topbar-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .topbar-brand svg { width: 26px; height: 26px; }
+  .topbar-brand span { font-family: 'Lora', serif; font-weight: 700; font-size: 1rem; color: var(--ink); }
+  .topbar-links { display: flex; gap: 1.5rem; }
+  .topbar-links a {
+    font-size: 0.85rem; font-weight: 500; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .topbar-links a:hover, .topbar-links a.active { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2b55 50%, #1e3a5f 100%);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(124,58,237,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(37,99,235,0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #a5b4fc; background: rgba(165,180,252,0.12);
+    border: 1px solid rgba(165,180,252,0.3);
+    border-radius: 99px; padding: 0.3rem 1rem; margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700; color: #ffffff;
+    line-height: 1.2; margin-bottom: 0.8rem;
+  }
+  .hero-sub {
+    font-size: 0.9rem; color: rgba(255,255,255,0.6);
+    margin-bottom: 0.4rem;
+  }
+  .hero-date {
+    font-size: 0.82rem; color: rgba(255,255,255,0.4);
+  }
+
+  /* ── LAYOUT ── */
+  .layout {
+    max-width: 900px; margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR TOC ── */
+  .toc {
+    position: sticky; top: 70px;
+    font-size: 0.8rem;
+  }
+  .toc-title {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .toc ul { list-style: none; }
+  .toc li { margin-bottom: 0.1rem; }
+  .toc a {
+    display: block; padding: 0.3rem 0.6rem;
+    color: var(--muted); text-decoration: none;
+    border-left: 2px solid transparent;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.2s; line-height: 1.4;
+  }
+  .toc a:hover { color: var(--accent); border-left-color: var(--accent); background: var(--note-bg); }
+  .toc a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--ink);
+    margin: 2.5rem 0 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 80px;
+  }
+  .content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+
+  .content h3 {
+    font-size: 1rem; font-weight: 600; color: var(--accent);
+    margin: 1.75rem 0 0.5rem;
+    scroll-margin-top: 80px;
+  }
+
+  .content p {
+    margin-bottom: 0.9rem; color: #2d2d45;
+    font-size: 0.92rem;
+  }
+
+  .content ul {
+    margin: 0.5rem 0 1rem 0;
+    padding-left: 1.4rem;
+  }
+  .content ul li {
+    margin-bottom: 0.45rem;
+    font-size: 0.92rem; color: #2d2d45;
+  }
+  .content ul li::marker { color: var(--accent); }
+
+  /* ── SPECIAL BLOCKS ── */
+  /* Warning box for liability notice */
+  .content p:has(> strong:first-child) { /* fallback via class below */ }
+
+  .warn-box {
+    background: var(--warn-bg);
+    border-left: 4px solid var(--warn-border);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .warn-box p { color: var(--warn-text) !important; font-size: 0.88rem !important; margin: 0; }
+
+  .note-box {
+    background: var(--note-bg);
+    border-left: 4px solid var(--note-border);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .note-box p { color: var(--note-text) !important; font-size: 0.88rem !important; margin: 0; font-style: italic; }
+
+  /* All-caps blocks (disclaimers) */
+  .content p.disclaimer {
+    font-size: 0.82rem !important;
+    color: #4a4a6a !important;
+    background: #f4f4fa;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
+    line-height: 1.6;
+    margin: 0.75rem 0;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  thead tr { background: #eef2ff; }
+  thead th { padding: 0.7rem 1rem; text-align: left; font-weight: 600; color: var(--ink); white-space: nowrap; }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:nth-child(even) { background: #f8f8fc; }
+  tbody td { padding: 0.6rem 1rem; vertical-align: top; color: #2d2d45; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--accent); color: white;
+    border: none; border-radius: 50%;
+    width: 40px; height: 40px;
+    font-size: 1.1rem; cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.35);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s;
+    text-decoration: none;
+  }
+  .back-top.visible { opacity: 1; }
+
+  @media (max-width: 700px) {
+    .layout { grid-template-columns: 1fr; }
+    .toc { display: none; }
+    .hero { padding: 2.5rem 1.2rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-brand" href="#">
+    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="26" height="26" rx="7" fill="#1a1a2e"/>
+      <circle cx="13" cy="13" r="6" stroke="#7c3aed" stroke-width="1.5"/>
+      <circle cx="13" cy="13" r="2.5" fill="#2563eb"/>
+      <line x1="13" y1="4" x2="13" y2="7" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="13" y1="19" x2="13" y2="22" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <span>Daily Snapshots</span>
+  </a>
+  <div class="topbar-links">
+    <a href="" class="active">Terms of Use</a>
+    <a href="privacy-policy.html" class="">Privacy Policy</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">Legal · Terms of Use</div>
+  <h1>Terms of Use</h1>
+  <p class="hero-sub">Daily Snapshots · [YOUR NAME / TRADING NAME]</p>
+  <p class="hero-date">Effective: [DATE] &nbsp;·&nbsp; Last updated: [DATE]</p>
+</header>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-title">On this page</div>
+    <ul></ul>
+  </aside>
+  <main class="content">
+    <h2 id="terms-of-use">TERMS OF USE</h2>
+
+<p>Daily Snapshots</p>
+
+<p>Effective Date: [DATE]</p>
+
+<p>Last Updated: [DATE]</p>
+
+<h2 id="important-please-read-carefully">IMPORTANT – PLEASE READ CAREFULLY</h2>
+
+<p>These Terms of Use constitute a legally binding agreement between you</p>
+<p>and [YOUR COMPANY NAME]. By accessing or using the Daily Snapshots</p>
+<p>application, you confirm that you have read, understood, and agreed to</p>
+<p>be bound by these Terms. If you do not agree, you must immediately cease</p>
+<p>all use of the Application.</p>
+
+<h2 id="1-parties-acceptance-and-definitions">1. PARTIES, ACCEPTANCE, AND DEFINITIONS</h2>
+
+<h3 id="1-1-parties">1.1 Parties</h3>
+
+<p>These Terms of Use (&quot;Terms&quot;) govern the relationship between [YOUR</p>
+<p>COMPANY NAME], a company incorporated under the laws of Hong Kong</p>
+<p>(&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) and any individual or entity (&quot;User,&quot;</p>
+<p>&quot;you,&quot; or &quot;your&quot;) who accesses or uses the Daily Snapshots mobile and</p>
+<p>web application (the &quot;Application&quot;).</p>
+
+<h3 id="1-2-acceptance">1.2 Acceptance</h3>
+
+<p>By downloading, installing, registering for, or using the Application in</p>
+<p>any manner, you represent and warrant that:</p>
+
+<ul>
+<li>  You are at least 18 years of age, or if between 13 and 17 years of</li>
+</ul>
+<p>age, that you have obtained verifiable consent from a parent or</p>
+<p>legal guardian;</p>
+
+<ul>
+<li>  You have the legal capacity and authority to enter into this</li>
+</ul>
+<p>agreement;</p>
+
+<ul>
+<li>  You have read, understood, and agree to be bound by these Terms and</li>
+</ul>
+<p>our Privacy Policy; and</p>
+
+<ul>
+<li>  Your use of the Application complies with all laws and regulations</li>
+</ul>
+<p>applicable to you.</p>
+
+<h2 id="important-notice-limitation-of-liability-and-individual-developer">⚠ IMPORTANT NOTICE: LIMITATION OF LIABILITY AND INDIVIDUAL DEVELOPER</h2>
+
+<h2 id="this-application-is-developed-and-operated-by-an-individual-developer">THIS APPLICATION IS DEVELOPED AND OPERATED BY AN INDIVIDUAL DEVELOPER</h2>
+<h2 id="sole-proprietor-not-a-company-by-accepting-these-terms-you">(SOLE PROPRIETOR), NOT A COMPANY. BY ACCEPTING THESE TERMS, YOU</h2>
+<h2 id="expressly-acknowledge-and-agree-that-1-the-developer-s-maximum">EXPRESSLY ACKNOWLEDGE AND AGREE THAT: (1) THE DEVELOPER’S MAXIMUM</h2>
+<h2 id="financial-liability-to-you-for-any-and-all-claims-is-capped-at-the">FINANCIAL LIABILITY TO YOU FOR ANY AND ALL CLAIMS IS CAPPED AT THE</h2>
+<h2 id="greater-of-the-amount-you-paid-in-the-preceding-12-months-or-hkd-100">GREATER OF THE AMOUNT YOU PAID IN THE PRECEDING 12 MONTHS OR HKD 100;</h2>
+<h2 id="2-this-cap-applies-regardless-of-the-form-or-nature-of-any-claim-3">(2) THIS CAP APPLIES REGARDLESS OF THE FORM OR NATURE OF ANY CLAIM; (3)</h2>
+<h2 id="the-application-is-provided-as-is-without-warranty-and-4-this">THE APPLICATION IS PROVIDED “AS IS” WITHOUT WARRANTY; AND (4) THIS</h2>
+<h2 id="liability-allocation-is-a-fundamental-and-material-term-of-this">LIABILITY ALLOCATION IS A FUNDAMENTAL AND MATERIAL TERM OF THIS</h2>
+<h2 id="agreement-and-is-reflected-in-the-pricing-of-the-application-if-you-do">AGREEMENT AND IS REFLECTED IN THE PRICING OF THE APPLICATION. IF YOU DO</h2>
+<h2 id="not-agree-to-this-limitation-you-must-not-use-the-application">NOT AGREE TO THIS LIMITATION, YOU MUST NOT USE THE APPLICATION.</h2>
+
+<h3 id="1-3-key-definitions">1.3 Key Definitions</h3>
+
+<ul>
+<li>  &quot;Application&quot; means the Daily Snapshots mobile and web application,</li>
+</ul>
+<p>including all content, features, functionality, and services offered</p>
+<p>therein.</p>
+
+<ul>
+<li>  &quot;Content&quot; means any photos, images, text, captions, comments, tags,</li>
+</ul>
+<p>or other materials uploaded, submitted, or otherwise made available</p>
+<p>through the Application.</p>
+
+<ul>
+<li>  &quot;User Content&quot; means Content that you create, upload, or transmit</li>
+</ul>
+<p>through the Application.</p>
+
+<ul>
+<li>  &quot;Subscription Services&quot; means any paid plans, premium features, or</li>
+</ul>
+<p>recurring services offered within the Application.</p>
+
+<ul>
+<li>  &quot;In-App Purchases&quot; means any one-time digital purchases made within</li>
+</ul>
+<p>the Application.</p>
+
+<h2 id="2-description-of-service">2. DESCRIPTION OF SERVICE</h2>
+
+<p>Daily Snapshots is a daily photo journaling and snapshot application</p>
+<p>that enables users to capture, store, organize, and review daily photo</p>
+<p>memories. The Application may offer features including but not limited</p>
+<p>to daily photo capture and journaling, memory archiving, milestone</p>
+<p>collections, sharing functionality, and premium subscription-based</p>
+<p>features.</p>
+
+<p>We reserve the right to modify, suspend, or discontinue any feature or</p>
+<p>aspect of the Application at any time, with or without notice. We shall</p>
+<p>not be liable to you or any third party for any such modification,</p>
+<p>suspension, or discontinuation.</p>
+
+<h2 id="3-account-registration-and-security">3. ACCOUNT REGISTRATION AND SECURITY</h2>
+
+<p>To access certain features of the Application, you must create an</p>
+<p>account. By registering, you agree to:</p>
+
+<ul>
+<li>  Provide accurate, current, and complete information during</li>
+</ul>
+<p>registration and maintain the accuracy of such information at all</p>
+<p>times;</p>
+
+<ul>
+<li>  Maintain the confidentiality of your account credentials and not</li>
+</ul>
+<p>share your password with any third party;</p>
+
+<ul>
+<li>  Accept full responsibility for all activities that occur under your</li>
+</ul>
+<p>account, whether or not authorized by you;</p>
+
+<ul>
+<li>  Immediately notify us at [YOUR CONTACT EMAIL] upon becoming aware of</li>
+</ul>
+<p>any unauthorized access to or use of your account; and</p>
+
+<ul>
+<li>  Not create multiple accounts, create an account using a false</li>
+</ul>
+<p>identity, or create an account on behalf of someone else without</p>
+<p>their consent.</p>
+
+<p>We reserve the right to suspend or terminate your account at any time if</p>
+<p>we reasonably believe that you have violated these Terms. You</p>
+<p>acknowledge that we are not liable for any loss or damage arising from</p>
+<p>your failure to comply with this section.</p>
+
+<h2 id="4-payments-subscriptions-and-refund-policy">4. PAYMENTS, SUBSCRIPTIONS, AND REFUND POLICY</h2>
+
+<h3 id="4-1-paid-services">4.1 Paid Services</h3>
+
+<p>The Application may offer Subscription Services and In-App Purchases</p>
+<p>(collectively, &quot;Paid Services&quot;). All Paid Services are subject to the</p>
+<p>terms in this Section 4. By purchasing any Paid Service, you agree to</p>
+<p>pay all applicable fees as described at the point of purchase.</p>
+
+<h3 id="4-2-pricing-and-billing">4.2 Pricing and Billing</h3>
+
+<ul>
+<li>  All prices are displayed in the applicable currency and are</li>
+</ul>
+<p>inclusive of applicable taxes unless otherwise stated.</p>
+
+<ul>
+<li>  For Subscription Services, you will be billed on a recurring basis</li>
+</ul>
+<p>(monthly or annually, as selected) until you cancel.</p>
+
+<ul>
+<li>  We reserve the right to change pricing at any time. For existing</li>
+</ul>
+<p>subscribers, price changes will take effect at the start of the next</p>
+<p>billing cycle, with at least 30 days' advance notice.</p>
+
+<ul>
+<li>  Payments are processed by third-party payment processors (e.g.,</li>
+</ul>
+<p>Apple In-App Purchase, Google Play Billing, Stripe). By making a</p>
+<p>purchase, you also agree to the terms and conditions of the</p>
+<p>applicable payment processor.</p>
+
+<h3 id="4-3-automatic-renewal">4.3 Automatic Renewal</h3>
+
+<p>Subscription Services automatically renew at the end of each billing</p>
+<p>period unless you cancel before the renewal date. You authorize us to</p>
+<p>charge your payment method on file for the renewal amount. It is your</p>
+<p>responsibility to cancel before the renewal date if you do not wish to</p>
+<p>be charged.</p>
+
+<h3 id="4-4-cancellation">4.4 Cancellation</h3>
+
+<p>You may cancel your subscription at any time through your account</p>
+<p>settings or through the applicable app store. Cancellation takes effect</p>
+<p>at the end of the current billing period. You will retain access to</p>
+<p>Subscription Services until the end of the paid period.</p>
+
+<h3 id="4-5-refund-policy">4.5 Refund Policy</h3>
+
+<h2 id="except-as-required-by-applicable-law-or-as-otherwise-expressly-stated">EXCEPT AS REQUIRED BY APPLICABLE LAW OR AS OTHERWISE EXPRESSLY STATED</h2>
+<h2 id="herein">HEREIN:</h2>
+
+<ul>
+<li>  All sales of In-App Purchases are final and non-refundable.</li>
+</ul>
+
+<ul>
+<li>  Subscription fees for the current billing period are non-refundable</li>
+</ul>
+<p>upon cancellation.</p>
+
+<ul>
+<li>  Refunds for purchases made through Apple App Store or Google Play</li>
+</ul>
+<p>Store are governed by the refund policies of those platforms, which</p>
+<p>may override our policy.</p>
+
+<ul>
+<li>  We may, at our sole discretion, grant refunds or credits on a</li>
+</ul>
+<p>case-by-case basis. Granting a refund in one instance does not</p>
+<p>entitle you to a refund in any future instance.</p>
+
+<p>If you believe a charge was made in error, please contact us at [YOUR</p>
+<p>CONTACT EMAIL] within 14 days of the charge.</p>
+
+<h3 id="4-6-failed-payments">4.6 Failed Payments</h3>
+
+<p>If a payment fails, we reserve the right to suspend or downgrade your</p>
+<p>access to Subscription Services. We may retry the charge using the</p>
+<p>payment method on file. You are responsible for ensuring your payment</p>
+<p>method remains valid and up to date.</p>
+
+<h2 id="5-user-content-and-licence">5. USER CONTENT AND LICENCE</h2>
+
+<h3 id="5-1-your-content">5.1 Your Content</h3>
+
+<p>You retain all ownership rights in and to your User Content. By</p>
+<p>uploading or submitting User Content to the Application, you grant us a</p>
+<p>limited, worldwide, non-exclusive, royalty-free, sublicensable, and</p>
+<p>transferable licence to use, reproduce, process, adapt, and display your</p>
+<p>User Content solely for the purpose of operating, maintaining, and</p>
+<p>improving the Application and providing services to you.</p>
+
+<p>This licence terminates when you delete your User Content or your</p>
+<p>account, except to the extent your User Content has been shared with</p>
+<p>others and they have not deleted it, or to the extent we are required to</p>
+<p>retain it by law.</p>
+
+<h3 id="5-2-your-representations-regarding-user-content">5.2 Your Representations Regarding User Content</h3>
+
+<p>You represent and warrant that:</p>
+
+<ul>
+<li>  You own or have the necessary licences, rights, consents, and</li>
+</ul>
+<p>permissions to submit User Content and to grant the licence above;</p>
+
+<ul>
+<li>  Your User Content does not infringe the intellectual property</li>
+</ul>
+<p>rights, privacy rights, or any other rights of any third party;</p>
+
+<ul>
+<li>  Your User Content does not contain illegal material, including but</li>
+</ul>
+<p>not limited to child sexual abuse material, defamatory content, or</p>
+<p>content that facilitates criminal acts; and</p>
+
+<ul>
+<li>  You have obtained all necessary consents from any individuals whose</li>
+</ul>
+<p>likeness, voice, or personal information appears in your User</p>
+<p>Content.</p>
+
+<h3 id="5-3-prohibited-content">5.3 Prohibited Content</h3>
+
+<p>You agree not to upload, post, or transmit any User Content that:</p>
+
+<ul>
+<li>  Is illegal, harmful, threatening, abusive, harassing, defamatory,</li>
+</ul>
+<p>obscene, or otherwise objectionable;</p>
+
+<ul>
+<li>  Infringes any patent, trademark, trade secret, copyright, or other</li>
+</ul>
+<p>proprietary rights of any party;</p>
+
+<ul>
+<li>  Contains nudity, sexually explicit material, or graphic violence;</li>
+</ul>
+
+<ul>
+<li>  Contains or depicts individuals under the age of 18 in an</li>
+</ul>
+<p>inappropriate or sexualised manner;</p>
+
+<ul>
+<li>  Promotes discrimination, hatred, or violence against any individual</li>
+</ul>
+<p>or group;</p>
+
+<ul>
+<li>  Constitutes unsolicited commercial communications (spam); or</li>
+</ul>
+
+<ul>
+<li>  Contains malware, viruses, or any other harmful code.</li>
+</ul>
+
+<p>We reserve the right (but not the obligation) to review, monitor,</p>
+<p>remove, or refuse any User Content at our sole discretion and without</p>
+<p>notice, including where such content violates these Terms.</p>
+
+<h2 id="6-intellectual-property-rights">6. INTELLECTUAL PROPERTY RIGHTS</h2>
+
+<p>All intellectual property rights in and to the Application, including</p>
+<p>but not limited to software, design, graphics, text, logos, trademarks,</p>
+<p>databases, and all other materials (excluding User Content), are owned</p>
+<p>by or licenced to the Company. Nothing in these Terms grants you any</p>
+<p>right to use the Company's intellectual property for any purpose other</p>
+<p>than your personal, non-commercial use of the Application as expressly</p>
+<p>permitted herein.</p>
+
+<p>You agree not to reproduce, duplicate, copy, sell, resell, or exploit</p>
+<p>any portion of the Application, use the Application, or access the</p>
+<p>Application without our express written permission.</p>
+
+<h2 id="7-prohibited-uses-and-conduct">7. PROHIBITED USES AND CONDUCT</h2>
+
+<p>You agree not to:</p>
+
+<ul>
+<li>  Use the Application for any unlawful purpose or in violation of any</li>
+</ul>
+<p>applicable laws or regulations;</p>
+
+<ul>
+<li>  Reverse engineer, decompile, disassemble, or attempt to extract the</li>
+</ul>
+<p>source code of the Application;</p>
+
+<ul>
+<li>  Use automated tools (bots, scrapers, crawlers) to access or collect</li>
+</ul>
+<p>data from the Application;</p>
+
+<ul>
+<li>  Introduce viruses, Trojans, worms, or other malicious software into</li>
+</ul>
+<p>the Application;</p>
+
+<ul>
+<li>  Attempt to gain unauthorised access to any portion of the</li>
+</ul>
+<p>Application, other accounts, or any systems or networks connected to</p>
+<p>the Application;</p>
+
+<ul>
+<li>  Use the Application in any manner that could disable, overburden,</li>
+</ul>
+<p>damage, or impair the Application;</p>
+
+<ul>
+<li>  Impersonate any person or entity or misrepresent your affiliation</li>
+</ul>
+<p>with any person or entity;</p>
+
+<ul>
+<li>  Collect or harvest personal information of other users without their</li>
+</ul>
+<p>consent;</p>
+
+<ul>
+<li>  Use the Application to transmit any advertising or promotional</li>
+</ul>
+<p>material without our prior written consent; or</p>
+
+<ul>
+<li>  Engage in any conduct that restricts or inhibits anyone's use or</li>
+</ul>
+<p>enjoyment of the Application.</p>
+
+<h2 id="8-privacy-and-data-protection">8. PRIVACY AND DATA PROTECTION</h2>
+
+<h3 id="8-1-privacy-policy">8.1 Privacy Policy</h3>
+
+<p>Your use of the Application is also governed by our Privacy Policy,</p>
+<p>which is incorporated into these Terms by reference. Please review our</p>
+<p>Privacy Policy carefully. By using the Application, you consent to the</p>
+<p>collection, processing, and use of your information as described in the</p>
+<p>Privacy Policy.</p>
+
+<h3 id="8-2-global-privacy-law-compliance">8.2 Global Privacy Law Compliance</h3>
+
+<p>We are committed to protecting your personal data in compliance with</p>
+<p>applicable privacy laws. Depending on your location, the following legal</p>
+<p>frameworks may apply to your data:</p>
+
+<p>European Union / European Economic Area (GDPR):</p>
+
+<p>If you are located in the EU or EEA, the General Data Protection</p>
+<p>Regulation (Regulation (EU) 2016/679) applies to the processing of your</p>
+<p>personal data. You have the right to access, rectify, erase, restrict</p>
+<p>processing of, and port your data, and to object to its processing. You</p>
+<p>also have the right to withdraw consent and to lodge a complaint with a</p>
+<p>supervisory authority. Our lawful basis for processing your data will be</p>
+<p>set out in our Privacy Policy.</p>
+
+<p>California Residents (CCPA/CPRA and CalOPPA):</p>
+
+<p>If you are a California resident, the California Consumer Privacy Act</p>
+<p>(as amended by the California Privacy Rights Act) and the California</p>
+<p>Online Privacy Protection Act may apply. You have the right to know what</p>
+<p>personal information we collect, the right to delete your personal</p>
+<p>information, the right to opt out of the sale or sharing of your</p>
+<p>personal information, the right to correct inaccurate personal</p>
+<p>information, and the right to non-discrimination for exercising your</p>
+<p>rights. We do not sell your personal information. Our Application</p>
+<p>honours Do-Not-Track (DNT) signals from your browser by [describe your</p>
+<p>DNT handling]. To exercise your rights, please contact us at [YOUR</p>
+<h2 id="contact-email">CONTACT EMAIL].</h2>
+
+<p>Hong Kong (Personal Data (Privacy) Ordinance, Cap. 486):</p>
+
+<p>We comply with the Hong Kong Personal Data (Privacy) Ordinance (PDPO).</p>
+<p>You have the right to request access to and correction of your personal</p>
+<p>data. To make a data access or correction request, please contact our</p>
+<p>Data Protection Officer at [YOUR CONTACT EMAIL].</p>
+
+<h3 id="8-3-data-security">8.3 Data Security</h3>
+
+<p>We implement industry-standard technical and organisational measures to</p>
+<p>protect your personal data against unauthorised access, loss,</p>
+<p>alteration, or destruction. However, no method of transmission over the</p>
+<p>Internet or electronic storage is 100% secure. You use the Application</p>
+<p>and transmit information to us at your own risk.</p>
+
+<h3 id="8-4-international-data-transfers">8.4 International Data Transfers</h3>
+
+<p>Your data may be transferred to, processed in, and stored in countries</p>
+<p>other than your country of residence. By using the Application, you</p>
+<p>consent to such transfer, processing, and storage. We will ensure that</p>
+<p>such transfers comply with applicable data protection laws, including</p>
+<p>through the use of appropriate safeguards such as standard contractual</p>
+<p>clauses.</p>
+
+<h2 id="9-third-party-services-and-links">9. THIRD-PARTY SERVICES AND LINKS</h2>
+
+<p>The Application may contain links to third-party websites, services, or</p>
+<p>content, or may integrate third-party services (including payment</p>
+<p>processors). These are provided for your convenience only. We do not</p>
+<p>endorse, control, or assume any responsibility for the content, privacy</p>
+<p>policies, or practices of any third-party websites or services. We</p>
+<p>encourage you to review the terms and privacy policies of any</p>
+<p>third-party services you access.</p>
+
+<p>In particular, purchases made through Apple App Store or Google Play</p>
+<p>Store are additionally subject to the terms and conditions of Apple Inc.</p>
+<p>or Google LLC respectively.</p>
+
+<h2 id="10-disclaimers-and-limitation-of-liability">10. DISCLAIMERS AND LIMITATION OF LIABILITY</h2>
+
+<h3 id="10-1-disclaimer-of-warranties">10.1 Disclaimer of Warranties</h3>
+
+<h2 id="to-the-fullest-extent-permitted-by-applicable-law-the-application-is">TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE APPLICATION IS</h2>
+<p>PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND,</p>
+<h2 id="either-express-or-implied-including-but-not-limited-to-implied">EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED</h2>
+<h2 id="warranties-of-merchantability-fitness-for-a-particular-purpose-and">WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND</h2>
+<h2 id="non-infringement-we-do-not-warrant-that">NON-INFRINGEMENT. WE DO NOT WARRANT THAT:</h2>
+
+<h2 id="the-application-will-be-uninterrupted-timely-secure-or">-   THE APPLICATION WILL BE UNINTERRUPTED, TIMELY, SECURE, OR</h2>
+<h2 id="error-free">ERROR-FREE;</h2>
+
+<h2 id="the-results-obtained-from-use-of-the-application-will-be-accurate-or">-   THE RESULTS OBTAINED FROM USE OF THE APPLICATION WILL BE ACCURATE OR</h2>
+<h2 id="reliable">RELIABLE;</h2>
+
+<h2 id="any-errors-in-the-application-will-be-corrected-or">-   ANY ERRORS IN THE APPLICATION WILL BE CORRECTED; OR</h2>
+
+<h2 id="the-application-or-the-servers-that-make-it-available-are-free-of">-   THE APPLICATION OR THE SERVERS THAT MAKE IT AVAILABLE ARE FREE OF</h2>
+<h2 id="viruses-or-other-harmful-components">VIRUSES OR OTHER HARMFUL COMPONENTS.</h2>
+
+<h3 id="10-2-limitation-of-liability">10.2 Limitation of Liability</h3>
+
+<h2 id="to-the-fullest-extent-permitted-by-applicable-law-in-no-event-shall-the">TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE</h2>
+<h2 id="company-its-directors-employees-agents-or-affiliates-be-liable-to">COMPANY, ITS DIRECTORS, EMPLOYEES, AGENTS, OR AFFILIATES BE LIABLE TO</h2>
+<h2 id="you-for-any-indirect-incidental-special-consequential-or-punitive">YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE</h2>
+<h2 id="damages-including-but-not-limited-to-loss-of-profits-data-use">DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE,</h2>
+<h2 id="goodwill-or-other-intangible-losses-arising-out-of-or-in-connection">GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION</h2>
+<h2 id="with">WITH:</h2>
+
+<h2 id="your-access-to-or-use-of-or-inability-to-access-or-use-the">-   YOUR ACCESS TO OR USE OF (OR INABILITY TO ACCESS OR USE) THE</h2>
+<h2 id="application">APPLICATION;</h2>
+
+<h2 id="any-conduct-or-content-of-any-third-party-on-the-application">-   ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE APPLICATION;</h2>
+
+<h2 id="any-content-obtained-from-the-application-or">-   ANY CONTENT OBTAINED FROM THE APPLICATION; OR</h2>
+
+<h2 id="unauthorised-access-use-or-alteration-of-your-transmissions-or">-   UNAUTHORISED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR</h2>
+<h2 id="content">CONTENT.</h2>
+
+<h2 id="you-expressly-acknowledge-that-this-application-is-operated-by-an">YOU EXPRESSLY ACKNOWLEDGE THAT THIS APPLICATION IS OPERATED BY AN</h2>
+<h2 id="individual-developer-sole-proprietor-and-that-the-pricing-of-the">INDIVIDUAL DEVELOPER (SOLE PROPRIETOR) AND THAT THE PRICING OF THE</h2>
+<h2 id="application-reflects-this-allocation-of-risk-this-liability-cap-is-a">APPLICATION REFLECTS THIS ALLOCATION OF RISK. THIS LIABILITY CAP IS A</h2>
+<h2 id="fundamental-and-material-term-of-this-agreement-without-which-the">FUNDAMENTAL AND MATERIAL TERM OF THIS AGREEMENT WITHOUT WHICH THE</h2>
+<h2 id="developer-would-not-make-the-application-available-at-its-current">DEVELOPER WOULD NOT MAKE THE APPLICATION AVAILABLE AT ITS CURRENT</h2>
+<h2 id="pricing-to-the-fullest-extent-permitted-by-applicable-law-the">PRICING. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE</h2>
+<h2 id="developer-s-total-aggregate-liability-to-you-for-all-claims-whether-in">DEVELOPER’S TOTAL AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS — WHETHER IN</h2>
+<h2 id="contract-tort-including-negligence-statute-or-otherwise-shall-not">CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR OTHERWISE — SHALL NOT</h2>
+<h2 id="exceed-the-greater-of-a-the-total-amount-you-paid-to-the-developer-in">EXCEED THE GREATER OF (A) THE TOTAL AMOUNT YOU PAID TO THE DEVELOPER IN</h2>
+<h2 id="the-twelve-12-months-immediately-preceding-the-event-giving-rise-to">THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO</h2>
+<h2 id="the-claim-or-b-one-hundred-hong-kong-dollars-hkd-100-this-cap">THE CLAIM, OR (B) ONE HUNDRED HONG KONG DOLLARS (HKD 100). THIS CAP</h2>
+<h2 id="applies-cumulatively-to-all-claims-combined-not-per-incident-in">APPLIES CUMULATIVELY TO ALL CLAIMS COMBINED, NOT PER INCIDENT. IN</h2>
+<h2 id="jurisdictions-that-do-not-permit-certain-exclusions-or-limitations">JURISDICTIONS THAT DO NOT PERMIT CERTAIN EXCLUSIONS OR LIMITATIONS,</h2>
+<h2 id="liability-is-limited-to-the-fullest-extent-permitted-by-that">LIABILITY IS LIMITED TO THE FULLEST EXTENT PERMITTED BY THAT</h2>
+<h2 id="jurisdiction-s-law-nothing-in-these-terms-excludes-or-restricts">JURISDICTION’S LAW. NOTHING IN THESE TERMS EXCLUDES OR RESTRICTS</h2>
+<h2 id="liability-for-i-death-or-personal-injury-caused-by-negligence-ii">LIABILITY FOR: (I) DEATH OR PERSONAL INJURY CAUSED BY NEGLIGENCE; (II)</h2>
+<h2 id="fraud-or-fraudulent-misrepresentation-or-iii-any-other-liability-that">FRAUD OR FRAUDULENT MISREPRESENTATION; OR (III) ANY OTHER LIABILITY THAT</h2>
+<h2 id="cannot-be-excluded-under-applicable-law-including-the-control-of">CANNOT BE EXCLUDED UNDER APPLICABLE LAW INCLUDING THE CONTROL OF</h2>
+<h2 id="exemption-clauses-ordinance-cap-71-laws-of-hong-kong">EXEMPTION CLAUSES ORDINANCE (CAP. 71, LAWS OF HONG KONG).</h2>
+
+<h3 id="10-3-indemnification">10.3 Indemnification</h3>
+
+<p>You agree to indemnify, defend, and hold harmless the Company and its</p>
+<p>officers, directors, employees, agents, and successors from and against</p>
+<p>any and all claims, liabilities, damages, losses, costs, and expenses</p>
+<p>(including reasonable legal fees) arising out of or relating to: (a)</p>
+<p>your use of the Application; (b) your User Content; (c) your violation</p>
+<p>of these Terms; or (d) your violation of any rights of any third party.</p>
+
+<h2 id="11-apple-app-store-and-google-play-store-terms">11. APPLE APP STORE AND GOOGLE PLAY STORE TERMS</h2>
+
+<p>If you download or access the Application through Apple's App Store, you</p>
+<p>acknowledge and agree that:</p>
+
+<ul>
+<li>  These Terms are entered into between you and the Company only, and</li>
+</ul>
+<p>not with Apple Inc. Apple is not responsible for the Application or</p>
+<p>its content.</p>
+
+<ul>
+<li>  Apple has no obligation to furnish any maintenance and support</li>
+</ul>
+<p>services with respect to the Application.</p>
+
+<ul>
+<li>  In the event of any failure of the Application to conform to any</li>
+</ul>
+<p>applicable warranty, you may notify Apple, and Apple will refund the</p>
+<p>purchase price for the Application (if any). To the maximum extent</p>
+<p>permitted by law, Apple has no other warranty obligation with</p>
+<p>respect to the Application.</p>
+
+<ul>
+<li>  Apple is not responsible for addressing any claims relating to the</li>
+</ul>
+<p>Application or your use thereof, including product liability claims,</p>
+<p>consumer protection claims, intellectual property infringement</p>
+<p>claims, or any claim that the Application fails to conform to any</p>
+<p>applicable legal or regulatory requirement.</p>
+
+<ul>
+<li>  Apple and its subsidiaries are third-party beneficiaries of these</li>
+</ul>
+<p>Terms. Upon your acceptance of these Terms, Apple will have the</p>
+<p>right (and will be deemed to have accepted the right) to enforce</p>
+<p>these Terms against you as a third-party beneficiary.</p>
+
+<p>The same principles apply mutatis mutandis with respect to the Google</p>
+<p>Play Store and Google LLC.</p>
+
+<h2 id="12-children-s-privacy-and-age-restrictions">12. CHILDREN'S PRIVACY AND AGE RESTRICTIONS</h2>
+
+<p>The Application is not directed to children under the age of 13. We do</p>
+<p>not knowingly collect personal information from children under 13</p>
+<p>without verified parental consent. Users between the ages of 13 and 17</p>
+<p>may only use the Application with the consent and under the supervision</p>
+<p>of a parent or legal guardian. If we become aware that we have</p>
+<p>inadvertently collected personal information from a child under 13</p>
+<p>without appropriate consent, we will take steps to delete that</p>
+<p>information promptly.</p>
+
+<p>If you believe that a child under 13 has provided us with personal</p>
+<p>information without appropriate consent, please contact us at [YOUR</p>
+<h2 id="contact-email">CONTACT EMAIL].</h2>
+
+<h2 id="13-term-and-termination">13. TERM AND TERMINATION</h2>
+
+<p>These Terms are effective from the date you first use the Application</p>
+<p>and continue until terminated. We may terminate or suspend your account</p>
+<p>and access to the Application, at our sole discretion and without</p>
+<p>notice, if we believe you have violated these Terms, any applicable law,</p>
+<p>or if we determine that it is in our legitimate business interest to do</p>
+<p>so.</p>
+
+<p>Upon termination:</p>
+
+<ul>
+<li>  Your right to use the Application immediately ceases;</li>
+</ul>
+
+<ul>
+<li>  We may delete your account and all associated data in accordance</li>
+</ul>
+<p>with our Privacy Policy and applicable law;</p>
+
+<ul>
+<li>  You remain responsible for any outstanding payment obligations; and</li>
+</ul>
+
+<ul>
+<li>  Sections of these Terms that by their nature should survive</li>
+</ul>
+<p>termination shall survive, including Sections 5 (User Content), 6</p>
+<p>(Intellectual Property), 10 (Disclaimers and Limitation of</p>
+<p>Liability), 14 (Governing Law), and 15 (Dispute Resolution).</p>
+
+<p>You may terminate your account at any time by following the account</p>
+<p>deletion process in the Application or contacting us at [YOUR CONTACT</p>
+<h2 id="email">EMAIL].</h2>
+
+<h2 id="14-governing-law">14. GOVERNING LAW</h2>
+
+<p>These Terms shall be governed by and construed in accordance with the</p>
+<p>laws of the Hong Kong Special Administrative Region of the People's</p>
+<p>Republic of China, without regard to its conflict of law principles.</p>
+
+<p>To the extent that any mandatory consumer protection laws of your</p>
+<p>jurisdiction of residence are more protective of you than the laws of</p>
+<p>Hong Kong, such laws shall apply to the extent required.</p>
+
+<h2 id="15-dispute-resolution">15. DISPUTE RESOLUTION</h2>
+
+<h3 id="15-1-informal-resolution">15.1 Informal Resolution</h3>
+
+<p>Before initiating any formal dispute resolution process, you agree to</p>
+<p>first contact us at [YOUR CONTACT EMAIL] and attempt to resolve the</p>
+<p>dispute informally for a period of at least thirty (30) days.</p>
+
+<h3 id="15-2-arbitration-for-users-outside-hong-kong">15.2 Arbitration (for Users Outside Hong Kong)</h3>
+
+<p>If informal resolution fails and you are located outside Hong Kong, any</p>
+<p>dispute, controversy, or claim arising out of or relating to these Terms</p>
+<p>or the Application shall be referred to and finally resolved by</p>
+<p>arbitration administered by the Hong Kong International Arbitration</p>
+<p>Centre (HKIAC) in accordance with the HKIAC Administered Arbitration</p>
+<p>Rules in force at the time of commencement of the arbitration. The seat</p>
+<p>of arbitration shall be Hong Kong. The language of the arbitration shall</p>
+<p>be English. The arbitration award shall be final and binding on the</p>
+<p>parties.</p>
+
+<h3 id="15-3-courts-for-users-in-hong-kong">15.3 Courts (for Users in Hong Kong)</h3>
+
+<p>If informal resolution fails and you are located in Hong Kong, the</p>
+<p>parties submit to the exclusive jurisdiction of the courts of the Hong</p>
+<p>Kong Special Administrative Region.</p>
+
+<h3 id="15-4-class-action-waiver">15.4 Class Action Waiver</h3>
+
+<h2 id="to-the-extent-permitted-by-applicable-law-you-waive-any-right-to-bring">TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOU WAIVE ANY RIGHT TO BRING</h2>
+<h2 id="or-participate-in-any-class-action-collective-action-or-representative">OR PARTICIPATE IN ANY CLASS ACTION, COLLECTIVE ACTION, OR REPRESENTATIVE</h2>
+<h2 id="proceeding-against-the-company">PROCEEDING AGAINST THE COMPANY.</h2>
+
+<h2 id="16-changes-to-these-terms">16. CHANGES TO THESE TERMS</h2>
+
+<p>We reserve the right to modify these Terms at any time. When we make</p>
+<p>material changes, we will notify you via the Application, by email, or</p>
+<p>by such other means as we deem appropriate. Your continued use of the</p>
+<p>Application after the effective date of the revised Terms constitutes</p>
+<p>your acceptance of the changes. If you do not agree to the revised</p>
+<p>Terms, you must stop using the Application and delete your account.</p>
+
+<h2 id="17-general-provisions">17. GENERAL PROVISIONS</h2>
+
+<h3 id="17-1-entire-agreement">17.1 Entire Agreement</h3>
+
+<p>These Terms, together with our Privacy Policy and any other legal</p>
+<p>notices or policies published on the Application, constitute the entire</p>
+<p>agreement between you and the Company with respect to the subject matter</p>
+<p>hereof.</p>
+
+<h3 id="17-2-severability">17.2 Severability</h3>
+
+<p>If any provision of these Terms is found to be invalid, illegal, or</p>
+<p>unenforceable, the remaining provisions shall continue in full force and</p>
+<p>effect.</p>
+
+<h3 id="17-3-waiver">17.3 Waiver</h3>
+
+<p>Our failure to enforce any right or provision of these Terms shall not</p>
+<p>constitute a waiver of such right or provision.</p>
+
+<h3 id="17-4-assignment">17.4 Assignment</h3>
+
+<p>You may not assign or transfer any of your rights or obligations under</p>
+<p>these Terms without our prior written consent. We may assign our rights</p>
+<p>and obligations under these Terms without restriction.</p>
+
+<h3 id="17-5-force-majeure">17.5 Force Majeure</h3>
+
+<p>We shall not be liable for any failure or delay in performance resulting</p>
+<p>from causes beyond our reasonable control, including but not limited to</p>
+<p>acts of God, natural disasters, war, terrorism, riots, embargoes, acts</p>
+<p>of civil or military authorities, fire, floods, accidents, strikes, or</p>
+<p>shortages of transportation, facilities, fuel, energy, labour, or</p>
+<p>materials.</p>
+
+<h3 id="17-6-language">17.6 Language</h3>
+
+<p>These Terms are made in English. In the event of any conflict between</p>
+<p>the English version and a translated version, the English version shall</p>
+<p>prevail.</p>
+
+<h2 id="18-third-party-infrastructure-and-sub-processors">18. THIRD-PARTY INFRASTRUCTURE AND SUB-PROCESSORS</h2>
+
+<h3 id="18-1-platform-and-infrastructure-providers">18.1 Platform and Infrastructure Providers</h3>
+
+<p>The Application is built on and operated through third-party platforms</p>
+<p>and infrastructure providers. By using the Application, you acknowledge</p>
+<p>that your data may be processed by the following sub-processors acting</p>
+<p>on our behalf:</p>
+
+<ul>
+<li>  Base44, Inc. (and its parent company Wix.com Ltd.) – application</li>
+</ul>
+<p>hosting, backend services, and database infrastructure;</p>
+
+<ul>
+<li>  MongoDB, Inc. – cloud database storage;</li>
+</ul>
+
+<ul>
+<li>  Supabase, Inc. – database and authentication services;</li>
+</ul>
+
+<ul>
+<li>  Despia – native mobile application runtime and App Store deployment</li>
+</ul>
+<p>infrastructure;</p>
+
+<ul>
+<li>  RevenueCat, Inc. – in-app purchase processing and subscription</li>
+</ul>
+<p>management;</p>
+
+<ul>
+<li>  OneSignal, Inc. – push notification delivery; and</li>
+</ul>
+
+<ul>
+<li>  Google AdMob (Google LLC) – advertising services, if and where</li>
+</ul>
+<p>advertising features are enabled within the Application.</p>
+
+<p>Each of the above providers processes your personal data as a</p>
+<p>sub-processor on our behalf and is subject to their own privacy policies</p>
+<p>and terms of service. We encourage you to review the applicable terms of</p>
+<p>each provider. Links to their privacy policies are available upon</p>
+<p>request at [YOUR CONTACT EMAIL].</p>
+
+<h3 id="18-2-service-dependency-and-upstream-disruption">18.2 Service Dependency and Upstream Disruption</h3>
+
+<p>The Application relies on the above third-party platforms for its core</p>
+<p>functionality. We do not warrant uninterrupted or error-free</p>
+<p>availability of the Application where such interruption or error arises</p>
+<p>from the acts, omissions, suspension, modification, or termination of</p>
+<p>services by any upstream third-party provider, including but not limited</p>
+<p>to Base44, Despia, or any of the sub-processors listed in Section 18.1.</p>
+<p>To the fullest extent permitted by applicable law, we shall not be</p>
+<p>liable for any loss, damage, or inconvenience arising from such upstream</p>
+<p>service disruptions.</p>
+
+<p>You further acknowledge that certain core functionality of the</p>
+<p>Application is dependent on the continued availability and pricing of</p>
+<p>the Base44 platform. In the event that Base44 ceases operations or</p>
+<p>materially changes its service offering, we will use commercially</p>
+<p>reasonable efforts to notify you and, where practicable, to migrate the</p>
+<p>Application to an alternative platform. However, we cannot guarantee</p>
+<p>continuity of service in such circumstances.</p>
+
+<h2 id="19-mobile-runtime-webview-technology-and-over-the-air-updates">19. MOBILE RUNTIME, WEBVIEW TECHNOLOGY, AND OVER-THE-AIR UPDATES</h2>
+
+<h3 id="19-1-webview-based-runtime">19.1 Webview-Based Runtime</h3>
+
+<p>The Application is delivered as a native mobile application that</p>
+<p>incorporates webview rendering technology, specifically Apple’s</p>
+<p>WKWebView on iOS devices. Certain features and content within the</p>
+<p>Application are rendered using web technologies (HTML, CSS, and</p>
+<p>JavaScript) within a native application container enhanced with native</p>
+<p>device APIs. This architecture enables the Application to access native</p>
+<p>device features including camera, biometric authentication, push</p>
+<p>notifications, and local storage, while delivering a cross-platform</p>
+<p>experience.</p>
+
+<h3 id="19-2-over-the-air-ota-updates">19.2 Over-the-Air (OTA) Updates</h3>
+
+<p>The Application may be updated automatically using over-the-air (OTA)</p>
+<p>update technology without requiring you to download a new version from</p>
+<p>the Apple App Store. OTA updates may alter, add, remove, or modify</p>
+<p>features and functionality of the Application. By using the Application,</p>
+<p>you expressly consent to receiving such automatic updates.</p>
+
+<p>Where an OTA update constitutes a material change to these Terms or the</p>
+<p>Application’s core features, we will notify you in accordance with</p>
+<p>Section 16 (Changes to These Terms). Non-material updates, including bug</p>
+<p>fixes, security patches, and minor feature enhancements, may be applied</p>
+<p>without advance notice.</p>
+
+<h2 id="20-device-permissions-and-native-features">20. DEVICE PERMISSIONS AND NATIVE FEATURES</h2>
+
+<p>To provide its core functionality, the Application may request access to</p>
+<p>certain features and data stored on your device. We only request</p>
+<p>permissions that are necessary for the features you choose to use. The</p>
+<p>following permissions may be requested:</p>
+
+<ul>
+<li>  Camera – to capture daily photos and snapshots as the primary</li>
+</ul>
+<p>function of the Application;</p>
+
+<ul>
+<li>  Photo Library / Camera Roll – to save captured snapshots and access</li>
+</ul>
+<p>previously taken photos for import;</p>
+
+<ul>
+<li>  Push Notifications – to send daily reminders to capture your</li>
+</ul>
+<p>snapshot and to deliver important account and service notifications;</p>
+
+<ul>
+<li>  Biometric Authentication (Face ID / Touch ID) – to provide secure</li>
+</ul>
+<p>and convenient access to your account, as an alternative to password</p>
+<p>entry; and</p>
+
+<ul>
+<li>  Device Clipboard – where you use paste functionality to input text</li>
+</ul>
+<p>or links within the Application.</p>
+
+<p>You may grant or revoke any of these permissions at any time through</p>
+<p>your device’s operating system settings. Please note that revoking</p>
+<p>certain permissions may limit or prevent access to specific features of</p>
+<p>the Application. We will always present you with a system permission</p>
+<p>dialogue before accessing any device feature for the first time, and we</p>
+<p>will not access any device feature without your prior explicit grant of</p>
+<p>the relevant permission.</p>
+
+<h2 id="21-persistent-device-identification-and-fraud-prevention">21. PERSISTENT DEVICE IDENTIFICATION AND FRAUD PREVENTION</h2>
+
+<p>To protect the integrity of the Application, prevent fraud, and enforce</p>
+<p>our one-account and free-trial policies, the Application assigns a</p>
+<p>persistent device identifier to your device. This identifier is</p>
+<p>implemented using iCloud Key-Value Storage on iOS devices and Android</p>
+<p>App Backup on Android devices.</p>
+
+<p>You expressly acknowledge and agree that:</p>
+
+<ul>
+<li>  This persistent identifier is designed to survive standard uninstall</li>
+</ul>
+<p>and reinstall cycles and may persist even if you delete and</p>
+<p>reinstall the Application;</p>
+
+<ul>
+<li>  The identifier is used solely for fraud prevention, abuse detection,</li>
+</ul>
+<p>and enforcement of trial and account policies, and is not used for</p>
+<p>advertising tracking or sold to any third party;</p>
+
+<ul>
+<li>  Our lawful basis for processing this identifier is our legitimate</li>
+</ul>
+<p>interest in preventing fraud and protecting the commercial integrity</p>
+<p>of the Application (under GDPR Article 6(1)(f)); and</p>
+
+<ul>
+<li>  If you wish to have this identifier removed or reset, you may</li>
+</ul>
+<p>contact us at [YOUR CONTACT EMAIL] with a deletion request. We will</p>
+<p>assess such requests in accordance with applicable data protection</p>
+<p>law, balancing your rights against our legitimate fraud prevention</p>
+<p>interests.</p>
+
+<h2 id="22-individual-developer-disclosure-and-liability">22. INDIVIDUAL DEVELOPER DISCLOSURE AND LIABILITY</h2>
+
+<p>You acknowledge that the Application is currently developed, maintained,</p>
+<p>and operated by an individual developer. As such, the following</p>
+<p>limitations and disclosures apply:</p>
+
+<ul>
+<li>  Support response times may be longer than those of a larger</li>
+</ul>
+<p>organisation. We will use reasonable efforts to respond to all</p>
+<p>support and legal enquiries within 14 business days;</p>
+
+<ul>
+<li>  Certain features or updates may be subject to development capacity</li>
+</ul>
+<p>and prioritisation; and</p>
+
+<ul>
+<li>  To the fullest extent permitted by applicable law, the developer’s</li>
+</ul>
+<p>total aggregate personal liability for all claims arising out of or</p>
+<p>related to the Application shall not exceed the greater of (a) the</p>
+<p>total amount you paid to the developer in the twelve (12) months</p>
+<p>immediately preceding the claim, or (b) one hundred Hong Kong</p>
+<p>Dollars (HKD 100).</p>
+
+<p>Nothing in this Section limits any liability that cannot be excluded</p>
+<p>under applicable law, including liability for fraud, wilful misconduct,</p>
+<p>or death or personal injury caused by negligence.</p>
+
+<h3 id="22-2-mandatory-pre-dispute-notice-requirement">22.2 Mandatory Pre-Dispute Notice Requirement</h3>
+
+<h2 id="before-initiating-any-legal-action-arbitration-claim-or-formal">BEFORE INITIATING ANY LEGAL ACTION, ARBITRATION, CLAIM, OR FORMAL</h2>
+<h2 id="dispute-resolution-process-against-the-developer-you-must-a-send-a">DISPUTE RESOLUTION PROCESS AGAINST THE DEVELOPER, YOU MUST: (A) SEND A</h2>
+<h2 id="detailed-written-notice-to-your-contact-email-describing-the-nature-of">DETAILED WRITTEN NOTICE TO [YOUR CONTACT EMAIL] DESCRIBING THE NATURE OF</h2>
+<h2 id="the-claim-the-specific-conduct-complained-of-and-the-remedy-sought">THE CLAIM, THE SPECIFIC CONDUCT COMPLAINED OF, AND THE REMEDY SOUGHT;</h2>
+<h2 id="and-b-allow-the-developer-a-period-of-sixty-60-calendar-days-from">AND (B) ALLOW THE DEVELOPER A PERIOD OF SIXTY (60) CALENDAR DAYS FROM</h2>
+<h2 id="receipt-of-that-notice-to-investigate-and-where-appropriate-remedy-the">RECEIPT OF THAT NOTICE TO INVESTIGATE AND, WHERE APPROPRIATE, REMEDY THE</h2>
+<h2 id="issue">ISSUE.</h2>
+
+<p>Failure to comply with this mandatory pre-dispute notice requirement is</p>
+<p>a complete bar to any subsequent legal action. This requirement does not</p>
+<p>apply where compliance would cause you to miss an applicable statute of</p>
+<p>limitations deadline that cannot be extended by agreement.</p>
+
+<h3 id="22-3-contractual-limitation-period">22.3 Contractual Limitation Period</h3>
+
+<h2 id="you-agree-that-any-claim-or-cause-of-action-arising-out-of-or-related-to">YOU AGREE THAT ANY CLAIM OR CAUSE OF ACTION ARISING OUT OF OR RELATED TO</h2>
+<h2 id="your-use-of-the-application-or-these-terms-must-be-commenced-within-one">YOUR USE OF THE APPLICATION OR THESE TERMS MUST BE COMMENCED WITHIN ONE</h2>
+<h2 id="1-year-after-the-claim-or-cause-of-action-first-arises-any-claim-not">(1) YEAR AFTER THE CLAIM OR CAUSE OF ACTION FIRST ARISES. ANY CLAIM NOT</h2>
+<h2 id="commenced-within-this-period-shall-be-permanently-barred-regardless-of">COMMENCED WITHIN THIS PERIOD SHALL BE PERMANENTLY BARRED, REGARDLESS OF</h2>
+<h2 id="any-applicable-statutory-limitation-period">ANY APPLICABLE STATUTORY LIMITATION PERIOD.</h2>
+
+<p>You acknowledge that this shortened limitation period is reasonable</p>
+<p>given the nature of digital consumer applications, the difficulty of</p>
+<p>investigating stale claims, and the individual developer context</p>
+<p>disclosed in Section 22.1. This contractual period is consistent with</p>
+<p>and does not purport to override any non-waivable statutory rights under</p>
+<p>applicable consumer protection law.</p>
+
+<h3 id="22-4-sole-and-exclusive-remedy">22.4 Sole and Exclusive Remedy</h3>
+
+<h2 id="in-the-event-that-the-application-fails-to-function-as-described-or-in">IN THE EVENT THAT THE APPLICATION FAILS TO FUNCTION AS DESCRIBED, OR IN</h2>
+<h2 id="the-event-of-any-breach-of-these-terms-by-the-developer-your-sole-and">THE EVENT OF ANY BREACH OF THESE TERMS BY THE DEVELOPER, YOUR SOLE AND</h2>
+<h2 id="exclusive-remedy-shall-be-at-the-developer-s-sole-discretion-a-a">EXCLUSIVE REMEDY SHALL BE, AT THE DEVELOPER’S SOLE DISCRETION: (A) A</h2>
+<h2 id="pro-rata-refund-of-any-subscription-fees-paid-for-the-period-during">PRO-RATA REFUND OF ANY SUBSCRIPTION FEES PAID FOR THE PERIOD DURING</h2>
+<h2 id="which-the-application-was-materially-non-functional-b-correction-of">WHICH THE APPLICATION WAS MATERIALLY NON-FUNCTIONAL; (B) CORRECTION OF</h2>
+<h2 id="the-defect-within-a-commercially-reasonable-timeframe-or-c">THE DEFECT WITHIN A COMMERCIALLY REASONABLE TIMEFRAME; OR (C)</h2>
+<h2 id="termination-of-your-account-with-a-refund-of-the-current-billing-period">TERMINATION OF YOUR ACCOUNT WITH A REFUND OF THE CURRENT BILLING PERIOD.</h2>
+<h2 id="in-no-event-shall-the-developer-be-obligated-to-pay-any-consequential">IN NO EVENT SHALL THE DEVELOPER BE OBLIGATED TO PAY ANY CONSEQUENTIAL,</h2>
+<h2 id="special-indirect-punitive-or-multiplied-damages-regardless-of">SPECIAL, INDIRECT, PUNITIVE, OR MULTIPLIED DAMAGES, REGARDLESS OF</h2>
+<h2 id="whether-such-damages-were-foreseeable-or-whether-the-developer-was">WHETHER SUCH DAMAGES WERE FORESEEABLE OR WHETHER THE DEVELOPER WAS</h2>
+<h2 id="advised-of-their-possibility">ADVISED OF THEIR POSSIBILITY.</h2>
+
+<h3 id="22-5-insurance-disclosure">22.5 Insurance Disclosure</h3>
+
+<p>You are hereby notified that the Developer [CHOOSE ONE: (a) maintains</p>
+<p>professional indemnity / technology errors and omissions insurance with</p>
+<p>a coverage limit of [AMOUNT] through [INSURER NAME] | (b) does not</p>
+<p>currently maintain professional indemnity or technology errors and</p>
+<p>omissions insurance]. This disclosure is made in accordance with the</p>
+<p>“reasonableness” factors under the Control of Exemption Clauses</p>
+<p>Ordinance (Cap. 71, Laws of Hong Kong). If you require a contracting</p>
+<p>party that maintains insurance coverage, you should not use this</p>
+<p>Application.</p>
+
+<h3 id="22-6-risk-acknowledgement-and-price-risk-allocation">22.6 Risk Acknowledgement and Price-Risk Allocation</h3>
+
+<h2 id="you-expressly-acknowledge-that-a-you-have-had-the-opportunity-to-read">YOU EXPRESSLY ACKNOWLEDGE THAT: (A) YOU HAVE HAD THE OPPORTUNITY TO READ</h2>
+<h2 id="and-consider-these-terms-before-using-the-application-b-the-pricing">AND CONSIDER THESE TERMS BEFORE USING THE APPLICATION; (B) THE PRICING</h2>
+<h2 id="of-the-application-is-materially-lower-than-it-would-be-if-the-developer">OF THE APPLICATION IS MATERIALLY LOWER THAN IT WOULD BE IF THE DEVELOPER</h2>
+<h2 id="were-to-assume-unlimited-liability-c-you-have-accepted-this-pricing">WERE TO ASSUME UNLIMITED LIABILITY; (C) YOU HAVE ACCEPTED THIS PRICING</h2>
+<h2 id="in-full-knowledge-of-the-liability-limitations-described-herein-d-you">IN FULL KNOWLEDGE OF THE LIABILITY LIMITATIONS DESCRIBED HEREIN; (D) YOU</h2>
+<h2 id="could-have-sought-alternative-applications-or-services-that-offer">COULD HAVE SOUGHT ALTERNATIVE APPLICATIONS OR SERVICES THAT OFFER</h2>
+<h2 id="different-liability-arrangements-and-e-the-liability-cap-and">DIFFERENT LIABILITY ARRANGEMENTS; AND (E) THE LIABILITY CAP AND</h2>
+<h2 id="exclusions-in-these-terms-are-fair-and-reasonable-in-all-the">EXCLUSIONS IN THESE TERMS ARE FAIR AND REASONABLE IN ALL THE</h2>
+<h2 id="circumstances-including-having-regard-to-the-individual-developer">CIRCUMSTANCES, INCLUDING HAVING REGARD TO THE INDIVIDUAL DEVELOPER</h2>
+<h2 id="context-and-the-pricing-of-the-application">CONTEXT AND THE PRICING OF THE APPLICATION.</h2>
+
+<h2 id="23-contact-information">23. CONTACT INFORMATION</h2>
+
+<p>If you have any questions about these Terms, wish to exercise your data</p>
+<p>rights, or need to contact us for any reason, please reach out to us at:</p>
+
+<h2 id="your-company-name">[YOUR COMPANY NAME]</h2>
+
+<p>Email: [YOUR CONTACT EMAIL]</p>
+
+<p>Attention: Legal / Data Protection Officer</p>
+
+<p>© [YEAR] [YOUR COMPANY NAME]. All rights reserved.</p>
+
+<p>These Terms of Use were last updated on [DATE].</p>
+
+
+  </main>
+</div>
+
+<footer>
+  <p>© [YEAR] [YOUR NAME / TRADING NAME]. All rights reserved.</p>
+  <p style="margin-top:0.4rem;">
+    <a href="terms-of-use.html">Terms of Use</a> &nbsp;·&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="mailto:[YOUR CONTACT EMAIL]">Contact</a>
+  </p>
+</footer>
+
+<a id="backTop" class="back-top" href="#" aria-label="Back to top">↑</a>
+
+<script>
+  // TOC highlight on scroll
+  const sections = document.querySelectorAll('.content h2, .content h3');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const backTop  = document.getElementById('backTop');
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(a => a.classList.remove('active'));
+        const id = entry.target.getAttribute('id');
+        const link = document.querySelector(`.toc a[href="#${id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+
+  sections.forEach(s => obs.observe(s));
+
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Apply disclaimer style to all-caps paragraphs
+  document.querySelectorAll('.content p').forEach(p => {
+    const txt = p.textContent.trim();
+    if (txt.length > 60 && txt === txt.toUpperCase()) {
+      p.classList.add('disclaimer');
+    }
+  });
+
+  // Wrap warning notice box
+  document.querySelectorAll('.content p').forEach(p => {
+    if (p.textContent.includes('IMPORTANT NOTICE') || p.textContent.includes('PLEASE READ CAREFULLY')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'warn-box';
+      p.parentNode.insertBefore(wrap, p);
+      wrap.appendChild(p);
+    }
+  });
+
+  // Wrap note/italic boxes
+  document.querySelectorAll('.content p').forEach(p => {
+    if (p.textContent.startsWith('PRIVACY AT A GLANCE') || p.textContent.startsWith('We do NOT collect')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'note-box';
+      p.parentNode.insertBefore(wrap, p);
+      wrap.appendChild(p);
+    }
+  });
+</script>
+</body>
+</html>
